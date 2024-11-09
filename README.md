@@ -32,4 +32,10 @@ Welcome to the News App project! This web application allows you to explore news
 - **Material-UI:** A React UI framework that implements Google's Material Design.
 - **NewsAPI:** A service that provides a simple HTTP API for searching and retrieving live articles from all over the web.
 
+## Why Run Locally?
+This application fetches data from NewsAPI, which has restrictions on requests from servers on the free plan. To use this application, it's recommended to run it locally on your machine. NewsAPI allows requests only from localhost, which means hosting this app on a live server might not work due to the restrictions imposed by NewsAPI's free plan.
+![image](https://github.com/user-attachments/assets/9c52a159-2a30-485f-a0c1-bdff01d00202)
+![image](https://github.com/user-attachments/assets/70666ed1-09df-4b17-af24-d45476a7149a)
+
+
 
