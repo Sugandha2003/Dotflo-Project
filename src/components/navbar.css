@@ -1,0 +1,76 @@
+/* navbar.css */
+
+.navbar {
+  background-color: #0c0c0c;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  padding: 10px 15px;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.5s ease;
+  border-radius: 40px;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  width: calc(100% + 20px);
+  height: 100%;
+  top: 0;
+  left: -10px;
+  background: linear-gradient(90deg, #ff00ff, #00ffcc, #cc00ff, #ff00ff);
+  background-size: 400% 400%;
+  border-radius: 40px;
+  z-index: -1;
+  animation: neonGradient 8s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar a:hover::before {
+  opacity: 1;
+}
+
+@keyframes neonGradient {
+  0%, 100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.navbar a:hover {
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffcc, 0 0 30px #cc00ff, 0 0 40px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff, 0 0 100px #ff00ff;
+  color: #fff;
+  transform: translateZ(20px);
+  border-radius: 80px;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  top: 0;
+  left: 0;
+  transform: perspective(500px) rotateY(90deg);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+  border-radius: 80px;
+}
+
+.navbar a:hover::after {
+  transform: perspective(500px) rotateY(0deg);
+}

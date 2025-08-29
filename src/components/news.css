@@ -1,0 +1,242 @@
+/* news.css */
+
+.container {
+  background-color: #111;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin: 35px 0px;
+  margin-top: 90px;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffcc, 0 0 30px #cc00ff, 0 0 40px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff, 0 0 100px #ff00ff;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -15px;
+}
+
+.col-md-4 {
+  width: calc(33.33% - 30px);
+  margin: 15px 0;
+  padding: 0 15px;
+  transition: transform 0.5s ease;
+}
+
+.col-md-4:hover {
+  transform: translateZ(20px);
+}
+
+.btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+body {
+  margin: 0;
+  background-color: #111;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffcc, 0 0 30px #cc00ff, 0 0 40px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff, 0 0 100px #ff00ff;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+:root {
+  --glow-color: hsl(186 100% 69%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.glowing-btn {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color), 0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+.faulty-letter {
+  opacity: 0.5;
+  animation: faulty-flicker 2s linear infinite;
+}
+
+.glowing-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: blur(1em);
+  transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+  background: var(--glow-color);
+  pointer-events: none;
+}
+
+.glowing-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowing-btn:hover {
+  color: rgba(183, 21, 204, 0.397);
+  text-shadow: none;
+  animation: none;
+}
+
+.glowing-btn:hover .glowing-txt {
+  animation: none;
+}
+
+.glowing-btn:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing-btn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing-btn:hover:after {
+  opacity: 1;
+}
+
+@keyframes faulty-flicker {
+  0% { opacity: 0.1; }
+  2% { opacity: 0.1; }
+  4% { opacity: 0.5; }
+  /* ... */
+}
+
+@keyframes text-flicker {
+  0% { opacity: 0.1; }
+  /* ... */
+}
+
+@keyframes border-flicker {
+  0% { opacity: 0.1; }
+  /* ... */
+}
+
+@media only screen and (max-width: 600px) {
+  .glowing-btn{
+    font-size: 1em;
+  }
+}
+
+h1.glitch-effect {
+  font-family: 'Rubik Scribble', sans-serif;
+  margin: 35px 0px;
+  margin-top: 90px;
+  position: relative;
+  font-size: 3rem;
+}
+
+h1.glitch-effect::before,
+h1.glitch-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+h1.glitch-effect::before {
+  color: #ff00ff;
+  animation: glitchAnim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitchAnim {
+  0% { transform: translate(-2px, -2px); }
+  100% { transform: translate(-1px, -2px); }
+}
